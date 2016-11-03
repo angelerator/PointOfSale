@@ -25,7 +25,7 @@ function asCurrency(val)
   return "$" + val.toFixed(2);
 }
 
-calculateReceipt(){
+function calculateReceipt(){
   var receiptSubtotal = getCookie("preTax");
   receiptSubtotal = Number(receiptSubtotal);
   var receiptTax = receiptSubtotal * 0.075;
