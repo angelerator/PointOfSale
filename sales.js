@@ -25,6 +25,16 @@ function asCurrency(val)
   return "$" + val.toFixed(2);
 }
 
+calculateReceipt(){
+  var receiptSubtotal = getCookie("preTax");
+  receiptSubtotal = Number(receiptSubtotal);
+  var receiptTax = receiptSubtotal * 0.075;
+  var receiptTotal = receiptSubtotal + receiptTax;
+  document.getElementById("sub").innerHTML = asCurrency(receiptSubtotal);
+  document.getElementById("tax").innerHTML = asCurrency(receiptTax);
+  document.getElementById("tot").innerHTML = asCurrency(receiptTotal);
+}
+
 //courtesy of w3schools, from: http://www.w3schools.com/js/js_cookies.asp
 function setCookie(cname, cvalue, exdays) {
     var d = new Date();
